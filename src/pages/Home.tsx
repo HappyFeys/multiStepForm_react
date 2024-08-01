@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Steps from "../component/layout/Header/Steps";
 import Footer from "../component/layout/Footer/Footer";
 import ButtonNext from "../component/common/ButtonNext";
@@ -7,8 +7,7 @@ import StepOne from "../component/features/StepOne";
 import StepTwo from "../component/features/StepTwo";
 import StepThree from "../component/features/StepThree";
 import StepFour from "../component/features/StepFour";
-import Thanks from "../component/features/thanks";
-
+import Thanks from "../component/features/ThankYou"
 
 function Home() {
     const [step, setStep] = useState(1);
@@ -29,14 +28,21 @@ function Home() {
         ],
     });
 
+    const onDataChange = useCallback((key: string, data: any) => {
+        setInformation((prevInformation) => ({
+            ...prevInformation,
+            [key]: data,
+        }));
+    }, []);
+
     const renderStep = (step : number) : JSX.Element => {
         switch (step) {
             case 1:
-                return <StepOne onDataChange={(key : string, data : string | boolean | string[]) => setInformation({...information, [key]: data})}/>
+                return <StepOne onDataChange={onDataChange}/>
             case 2:
-                return <StepTwo onDataChange={(key : string, data : string | boolean | string[]) => setInformation({...information, [key]: data})}/>
+                return <StepTwo onDataChange={onDataChange}/>
             case 3:
-                return <StepThree onDataChange={(key : string, data : string | boolean | string[]) => setInformation({...information, [key]: data})} monthly={information.monthly}/>
+                return <StepThree onDataChange={onDataChange} monthly={information.monthly}/>
             case 4:
                 return <StepFour resume={information} setStep={(newStep : number) => setStep(newStep)}/>     
             default:
@@ -50,10 +56,9 @@ function Home() {
             <Steps stepActive={step} />
             {renderStep(step)}
             <div className="home__button">
-                <ButtonPrevious handlePrevious={() => setStep(step - 1)} />
-                <ButtonNext handleNext={() => setStep(step + 1)} />
+                <ButtonPrevious handlePrevious={() => setStep(step - 1)} display={(step===1 || step ===5) ? "btn--none" : ""}/>
+                <ButtonNext handleNext={() =>  setStep(step + 1)} display={step===5 ? "btn--none" : ""}/>
             </div>
-            <Footer />
         </div>
     );
 }

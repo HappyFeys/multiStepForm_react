@@ -1,0 +1,87 @@
+.stepTwo{
+
+    .plan{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        .plan--choice{
+            display: flex;
+            border: 1px solid var(--Lightgray);
+            border-radius: 10px;
+            padding: 10px;
+            .plan--choice--description{
+                margin-left: 10px;
+                width: 75%;
+                h3{
+                    color: var(--Marineblue);
+                }
+            }
+            &:hover{
+                cursor: pointer;
+                background-color: var(--Magnolia);
+                border-color: var(--Marineblue);
+            }
+        }
+        .plan__choice{
+            width: 100%;
+            border-radius: 10px;
+            padding: 10px;
+            margin:0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--Magnolia);
+            input{
+                margin: 0 10px;
+            }
+            .checkbox{
+                height: 17px;
+                width: 35px;
+                background: var(--Marineblue);
+                appearance: none;
+                border-radius: 17px;
+                position: relative;
+                outline: none;
+                cursor: pointer;
+                transition: 0.5s;            
+            }
+            
+            .checkbox::before{
+                height: 17px;
+                width: 17px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: "";
+                background: #fff;
+                border-radius: 17px;
+                transform: scale(0.9);
+                transition: 0.5s;
+                
+            }
+            
+            .checkbox:checked::before{
+                left: 17px;
+                background: #fff;            
+            }
+            
+            .checkbox::after{
+                content: "";
+                position: absolute;
+                top: 40px;
+                left: 17px;
+                z-index: -1;
+                transform: translate(-50%,-50%);
+                transition: 0.5s;
+            }
+            label{
+                color: var(--Coolgray);
+                font-weight: 600;
+            }
+            .monthlyActive{
+                color: var(--Marineblue);
+            }
+        }
+    }
+}

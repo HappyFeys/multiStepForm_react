@@ -1,0 +1,41 @@
+.addon{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    .addon--choice{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid var(--Lightgray);
+        border-radius: 10px;
+        width: 100%;
+        padding: 10px;
+        &:hover{
+            cursor: pointer;
+            background-color: var(--Magnolia);
+            border-color: var(--Marineblue);
+        }
+        input{
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            &:checked{
+                accent-color: var(--Purplishblue);
+                outline: none;
+            }
+        }
+        p{
+            width: fit-content;
+            font-size: 14px;
+        }
+        h4{
+            color: var(--Marineblue);
+        }
+        .addon--price{
+            color: var(--Purplishblue);
+        }
+    }
+}

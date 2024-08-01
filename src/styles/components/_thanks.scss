@@ -1,0 +1,19 @@
+.thanks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+    img{
+        width:50px;
+        margin-bottom: 20px;
+    }
+    h2{
+        font-weight: bolder;
+
+    }
+    p{
+        width: 90%;
+    }
+}

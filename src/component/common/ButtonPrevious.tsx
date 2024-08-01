@@ -1,9 +1,10 @@
 type ButtonPreviousProps = {
     handlePrevious: () => void;
+    display: string;
 }
-function ButtonPrevious({handlePrevious} : ButtonPreviousProps) {
+function ButtonPrevious({handlePrevious, display} : ButtonPreviousProps) {
     return (
-        <button className="button--previous" onClick={handlePrevious}>
+        <button className={`button--previous ${display}`} onClick={handlePrevious}>
             Go Back
         </button>
     );

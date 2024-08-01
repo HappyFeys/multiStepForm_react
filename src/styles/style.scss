@@ -5,7 +5,7 @@
 
 html {
     height: 100%;
-    background: linear-gradient(180deg, var(--background) 0%, black 100%);
+    background: var(--Magnolia);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,9 +15,14 @@ html {
 body {
     height: 100%;
     min-height: 100dvh;
-    font-family: Ubuntu;
+    font-family: "Ubuntu Sans", sans-serif;
     color:var(--text);
     overflow-x: hidden;
     overflow-y: scroll;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
 }
 

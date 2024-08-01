@@ -1,0 +1,35 @@
+.home__button{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    font-weight: 500;
+    padding: 10px 0;
+    .button--next{
+        background-color: var(--Marineblue);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 10px 0;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-left: auto;
+        margin-right: 20px;
+        &:hover{
+            background-color: var(--Purplishblue);
+        }
+    }
+    .button--previous{
+        background-color: #fff;
+        border: none;
+        color: var(--Coolgray);
+        margin-left: 20px;
+    }
+    .btn--none{
+        display: none;
+    }
+
+}
