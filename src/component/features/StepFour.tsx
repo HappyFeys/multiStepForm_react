@@ -2,6 +2,18 @@ import { ResumeProps } from "../../types/stepType";
 
 function StepFour({ resume, setStep } : ResumeProps) {
 
+    const defineAddonName = (name:string) => {
+        switch (name) {
+            case "online":
+                return "Online service";
+            case "storage":
+                return "Larger storage";
+            case "profile":
+                return "Customizable profile";
+            default:
+                break;
+        }
+    }
     
 
     return (
@@ -24,7 +36,7 @@ function StepFour({ resume, setStep } : ResumeProps) {
                     {resume.addons.map((addon, index) => (
                         <div key={index} className="checkout__description--addon--elem">
                             <div>
-                                <p>{addon.name}</p>
+                                <p>{defineAddonName(addon.name)}</p>
                             </div>
                             <p className="price">{`+$${addon.price}/${resume.  monthly ? "mo" : "yr"}`}</p>
                         </div>

@@ -6,6 +6,13 @@
     width: 100%;
     height: 100vh;
     position: relative;
+    @include responsive(768px){
+        flex-direction: row;
+        width: 80%;
+        background-color: #fff;
+        height: 90%;
+        border-radius: 10px;
+    }
 }
 
 .main{
@@ -19,7 +26,11 @@
     background-color: #fff;
     border-radius: 10px;
     @include responsive(768px){
-        padding: 0
+        height: 75%;
+        justify-content: flex-start;
+        margin-right: 20px;
+        align-items: flex-start;
+        padding-top: 0;
     }
     h2{
         color: var(--Marineblue);
@@ -30,5 +41,8 @@
         font-weight: 500;
         width: 80%;
         margin: 10px 0;
+        @include responsive(768px){
+            width: 100%;
+        }
     }
 }

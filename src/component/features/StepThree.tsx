@@ -34,24 +34,24 @@ function StepThree({onDataChange, monthly} : StepProps ) {
                 <p>Add-ons help enhance your gaming experience.</p>
             </div>
             <div className="addon">
-                <div onClick={handleClick} data-addon="online" className="addon--choice" >
-                    <input type="checkbox" name="addon"     id="online" />
+                <div onClick={handleClick} data-addon="online" className={`addon--choice ${selectedAddons.some(a => a.name === "online") ? "addon--choice--active" : ""}`} >
+                    <input type="checkbox" name="addon"     id="online" checked={selectedAddons.some(a => a.name === "online")}/>
                     <div>
                         <h4>Online service</h4>
                         <p>Access to multiplayer games</p>
                     </div>
                     <p className="addon--price">{monthly ? "+$1/mo" : "+$10/yr"}</p>
                 </div>
-                <div onClick={handleClick} data-addon="storage" className="addon--choice">
-                    <input type="checkbox" name="addon"     id="storage" />
+                <div onClick={handleClick} data-addon="storage" className={`addon--choice ${selectedAddons.some(a => a.name === "storage") ? "addon--choice--active" : ""}`}>
+                    <input type="checkbox" name="addon"     id="storage" checked={selectedAddons.some(a => a.name === "storage")}/>
                     <div>
                         <h4>Larger storage</h4>
                         <p>Extra 1TB of cloud save</p>
                     </div>
                     <p className="addon--price">{monthly ? "+$2/mo" : "+$20/yr"}</p>
                 </div>
-                <div onClick={handleClick} data-addon="profile" className="addon--choice">
-                    <input type="checkbox" name="addon"     id="custoProfile" />
+                <div onClick={handleClick} data-addon="profile" className={`addon--choice ${selectedAddons.some(a => a.name === "profile") ? "addon--choice--active" : ""}`}>
+                    <input type="checkbox" name="addon"     id="custoProfile" checked={selectedAddons.some(a => a.name === "profile")}/>
                     <div>
                         <h4>Customizable profile</h4>
                         <p>Custom theme on your profile</p>

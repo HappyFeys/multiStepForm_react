@@ -57,7 +57,7 @@ function Home() {
             {renderStep(step)}
             <div className="home__button">
                 <ButtonPrevious handlePrevious={() => setStep(step - 1)} display={(step===1 || step ===5) ? "btn--none" : ""}/>
-                <ButtonNext handleNext={() =>  setStep(step + 1)} display={step===5 ? "btn--none" : ""}/>
+                <ButtonNext handleNext={() =>  setStep(step + 1)} display={step===5 ? "btn--none" : ""}>{step===4? "Confirm": "Next Step"}</ButtonNext>
             </div>
         </div>
     );

@@ -26,6 +26,9 @@
                 font-weight: 500;
                 text-decoration: underline;
                 cursor: pointer;
+                &:hover{
+                    color: var(--Purplishblue);
+                }
             }
         }
         .checkout__description--addon--elem{
@@ -54,6 +57,7 @@
         .price{
             color: var(--Purplishblue);
             font-weight: bold;
+            font-size: 18px;
         }
     }
 }

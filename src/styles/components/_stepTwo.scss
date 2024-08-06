@@ -16,6 +16,11 @@
                 h3{
                     color: var(--Marineblue);
                 }
+                .free{
+                    color: var(--Marineblue);
+                    font-size: 12px;
+                    margin: 0;
+                }
             }
             &:hover{
                 cursor: pointer;
@@ -82,6 +87,10 @@
             .monthlyActive{
                 color: var(--Marineblue);
             }
+        }
+        .plan--choice--active{
+            background-color: var(--Magnolia);
+            border-color: var(--Marineblue);
         }
     }
 }

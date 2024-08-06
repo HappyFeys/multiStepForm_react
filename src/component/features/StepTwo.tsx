@@ -43,25 +43,28 @@ function StepTwo({ onDataChange }: StepProps) {
                 <p>You have the option of monthly or yearly billing</p>
             </div>
             <div className="plan">
-                <div onClick={handleClick} data-plan="arcade"       className="plan--choice">
+                <div onClick={handleClick} data-plan="arcade"       className={`plan--choice ${planChoice === "arcade"? "plan--choice--active": ""}`}>
                     <img src="./../../src/assets/img/icon-arcade.svg" alt="Arcade" />
                 <div className="plan--choice--description">
                     <h3>Arcade</h3>
                     <p>{monthly ? "$9/mo" : "$90/yr"}</p>
+                    <p className="free">{!monthly ? "2 months free" : ""}</p>
                 </div>
             </div>
-            <div onClick={handleClick} data-plan="advanced" className="plan--choice">
+            <div onClick={handleClick} data-plan="advanced" className={`plan--choice ${planChoice === "advanced"? "plan--choice--active": ""}`}>
                 <img src="./../../src/assets/img/icon-advanced.svg" alt="Advanced" />
                 <div className="plan--choice--description">
                     <h3>Advanced</h3>
                     <p>{monthly ? "$12/mo" : "$120/yr"}</p>
+                    <p className="free">{!monthly ? "2 months free" : ""}</p>
                 </div>
             </div>
-            <div onClick={handleClick} data-plan="pro" className="plan--choice">
+            <div onClick={handleClick} data-plan="pro" className={`plan--choice ${planChoice === "pro"? "plan--choice--active": ""}`}>
                 <img src="./../../src/assets/img/icon-pro.svg" alt="Pro" />
                 <div className="plan--choice--description">
                     <h3>Pro</h3>
                     <p>{monthly ? "$15/mo" : "$150/yr"}</p>
+                    <p className="free">{!monthly ? "2 months free" : ""}</p>
                 </div>
             </div>
             <div className="plan__choice">

@@ -11,6 +11,14 @@
     font-weight: bold;
     @include responsive(768px){
         background-image: url("./../../../src/assets/img/bg-sidebar-desktop.svg");
+        background-size: cover;
+        height: 95%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 50%;
+        margin: 20px;
+        border-radius: 10px;
     }
     .steps__elem{
         width: 30px;
@@ -22,18 +30,43 @@
         align-items: center;
         margin: 30px 10px;
         color: var(--Pastelblue);
+        @include responsive(768px){
+            justify-content: flex-start;
+            width: fit-content;
+            height: auto;
+            border: none;
+            margin: 15px 20px;
+            &:first-child{
+                margin-top: 50px;
+            }
+        }
+        .steps__elem--all{
+            width: 30px;
+            height: 30px;
+            border-radius: 25px;
+            border: 1px solid var(--Pastelblue);
+            display: flex;
+            justify-content: center;
+            margin-right: 10px;
+            align-items: center;
+            color: var(--Pastelblue);
+        }
         .steps__desktop{
             display: none;
             @include responsive(768px){
                 display: flex;
+                flex-direction: column;
+            }
+            .step__desktop--option{
+                color: #fff;
             }
         }
         .steps__active{
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            height: 100%;
+            width: 30px;
+            height: 30px;
             border-radius: 25px;
             background-color: var(--Pastelblue);
             color: var(--Marineblue);

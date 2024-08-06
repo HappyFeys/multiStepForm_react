@@ -7,6 +7,10 @@
     background-color: #fff;
     font-weight: 500;
     padding: 10px 0;
+    @include responsive(768px){
+        width: 60%;
+        right: 0;
+    }
     .button--next{
         background-color: var(--Marineblue);
         color: #fff;

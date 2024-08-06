@@ -580,6 +580,15 @@ footer {
   height: 100vh;
   position: relative;
 }
+@media only screen and (min-width: 768px) {
+  .home {
+    flex-direction: row;
+    width: 80%;
+    background-color: #fff;
+    height: 90%;
+    border-radius: 10px;
+  }
+}
 
 .main {
   display: flex;
@@ -594,7 +603,11 @@ footer {
 }
 @media only screen and (min-width: 768px) {
   .main {
-    padding: 0;
+    height: 75%;
+    justify-content: flex-start;
+    margin-right: 20px;
+    align-items: flex-start;
+    padding-top: 0;
   }
 }
 .main h2 {
@@ -606,6 +619,11 @@ footer {
   font-weight: 500;
   width: 80%;
   margin: 10px 0;
+}
+@media only screen and (min-width: 768px) {
+  .main p {
+    width: 100%;
+  }
 }
 
 .flexCenterCenter, footer {
@@ -784,6 +802,14 @@ main::-webkit-scrollbar-thumb {
 @media only screen and (min-width: 768px) {
   .steps {
     background-image: url("./../../../src/assets/img/bg-sidebar-desktop.svg");
+    background-size: cover;
+    height: 95%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 50%;
+    margin: 20px;
+    border-radius: 10px;
   }
 }
 .steps .steps__elem {
@@ -797,20 +823,48 @@ main::-webkit-scrollbar-thumb {
   margin: 30px 10px;
   color: var(--Pastelblue);
 }
+@media only screen and (min-width: 768px) {
+  .steps .steps__elem {
+    justify-content: flex-start;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: auto;
+    border: none;
+    margin: 15px 20px;
+  }
+  .steps .steps__elem:first-child {
+    margin-top: 50px;
+  }
+}
+.steps .steps__elem .steps__elem--all {
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  border: 1px solid var(--Pastelblue);
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+  align-items: center;
+  color: var(--Pastelblue);
+}
 .steps .steps__elem .steps__desktop {
   display: none;
 }
 @media only screen and (min-width: 768px) {
   .steps .steps__elem .steps__desktop {
     display: flex;
+    flex-direction: column;
   }
+}
+.steps .steps__elem .steps__desktop .step__desktop--option {
+  color: #fff;
 }
 .steps .steps__elem .steps__active {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 30px;
+  height: 30px;
   border-radius: 25px;
   background-color: var(--Pastelblue);
   color: var(--Marineblue);
@@ -825,6 +879,12 @@ main::-webkit-scrollbar-thumb {
   background-color: #fff;
   font-weight: 500;
   padding: 10px 0;
+}
+@media only screen and (min-width: 768px) {
+  .home__button {
+    width: 60%;
+    right: 0;
+  }
 }
 .home__button .button--next {
   background-color: var(--Marineblue);
@@ -896,6 +956,11 @@ main::-webkit-scrollbar-thumb {
 .stepTwo .plan .plan--choice .plan--choice--description h3 {
   color: var(--Marineblue);
 }
+.stepTwo .plan .plan--choice .plan--choice--description .free {
+  color: var(--Marineblue);
+  font-size: 12px;
+  margin: 0;
+}
 .stepTwo .plan .plan--choice:hover {
   cursor: pointer;
   background-color: var(--Magnolia);
@@ -959,6 +1024,10 @@ main::-webkit-scrollbar-thumb {
 .stepTwo .plan .plan__choice .monthlyActive {
   color: var(--Marineblue);
 }
+.stepTwo .plan .plan--choice--active {
+  background-color: var(--Magnolia);
+  border-color: var(--Marineblue);
+}
 
 .addon {
   display: flex;
@@ -1002,6 +1071,10 @@ main::-webkit-scrollbar-thumb {
 .addon .addon--choice .addon--price {
   color: var(--Purplishblue);
 }
+.addon .addon--choice--active {
+  background-color: var(--Magnolia);
+  border-color: var(--Marineblue);
+}
 
 .checkout {
   width: 100%;
@@ -1036,6 +1109,9 @@ main::-webkit-scrollbar-thumb {
   text-decoration: underline;
   cursor: pointer;
 }
+.checkout .checkout__description .checkout__description--plan .change:hover {
+  color: var(--Purplishblue);
+}
 .checkout .checkout__description .checkout__description--addon--elem {
   display: flex;
   justify-content: space-between;
@@ -1064,6 +1140,7 @@ main::-webkit-scrollbar-thumb {
 .checkout .checkout__total .price {
   color: var(--Purplishblue);
   font-weight: bold;
+  font-size: 18px;
 }
 
 .thanks {
@@ -1106,4 +1183,12 @@ body {
 #root {
   display: flex;
   flex-direction: column;
+}
+@media only screen and (min-width: 768px) {
+  #root {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
 }

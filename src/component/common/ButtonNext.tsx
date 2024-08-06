@@ -1,11 +1,12 @@
 type ButtonNextProps = {
     handleNext: () => void
     display:string;
+    children: React.ReactNode
 }
-function ButtonNext({handleNext, display} : ButtonNextProps) {
+function ButtonNext({handleNext, display, children} : ButtonNextProps) {
     return (
         <button className={`button--next ${display}`} onClick={handleNext}>
-            Next Step
+            {children}
         </button>
     );
 }
